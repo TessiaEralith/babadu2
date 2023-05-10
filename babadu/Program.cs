@@ -1,13 +1,12 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 using read;
 
+
 List<User> user = read.Read.Reading();
-foreach (var item in user)
-{
-    Console.WriteLine(item.id);
-    Console.WriteLine(item.login);
-    Console.WriteLine(item.pass);
-    Console.WriteLine(item.mail);
-}
+
+Console.WriteLine(AllChecks.CheckingForEngaged("test"));
+ 

@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Data.Common;
+using System.Text.Json;
 
 namespace read
 {
@@ -6,7 +7,7 @@ namespace read
     {
         public static List<User> Reading()
         {
-            string pathToJson = @"C:\Users\Tessia\Desktop\bede.json";
+            string pathToJson = @"C:\Users\JESUS\Downloads\TelegramDesktop\bede.json";
 
             string json = File.ReadAllText(pathToJson);
 
@@ -14,9 +15,22 @@ namespace read
 
             return user;
         }
+
+
     }
 
+  
+}
 
+public class Column
+{
+    public string Name { get; set; }
+    public List<string> Card { get; set; }
+    public Column(string name, List<string> cards)
+    {
+        Name = name;
+        Card = cards;
+    }
 }
 public class User
 {
@@ -24,6 +38,8 @@ public class User
     public string Login { get; set; }
     public string Password { get; set; }
     public string Email { get; set; }
+
+    public Column column {get; set;}
 
     public User(int id, string login, string password, string email)
     {
@@ -37,18 +53,21 @@ public class User
 public class AllChecks
 {
     List<User> user = read.Read.Reading();
-    public bool CheckingForEngaged(string login)
+     public static  bool CheckingForEngaged(string login)
     {
+        List<User> user = read.Read.Reading();
         bool check = true;
         for (int i = 0; i < user.Count; i++)
         {
             if (user[i].Login == login)
             {
-                check = false; return check;
+                check = false;
+                return check;
             }
-                
-            return check;
-
         }
+        return check;
     }
 }
+    
+
+
