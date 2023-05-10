@@ -3,11 +3,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 using read;
 
-List<User> user = read.Read.Reading();
-foreach (var item in user)
-{
-    Console.WriteLine(item.id);
-    Console.WriteLine(item.login);
-    Console.WriteLine(item.pass);
-    Console.WriteLine(item.mail);
-}
+List<User> user = Read.Reading();
+AllChecks allChecks = new AllChecks();
+bool ch = allChecks.CheckingForEngaged("test");
+//bool ch = new AllChecks.CheckingForEngaged("test");
+Console.WriteLine(ch);
