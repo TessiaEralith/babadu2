@@ -6,7 +6,7 @@
     "email": "123@mail.ru",
     "desk": [
       {
-        "acces": 1,
+        "access": 1,
         "whitelist": [
           1
         ],
@@ -33,7 +33,7 @@
     "email": "1efs@mail.ru",
     "desk": [
       {
-        "acces": 0,
+        "access": 0,
         "whitelist": [
           1,2
         ],
